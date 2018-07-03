@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/common/filecommon.css" />
+		<script type="text/javascript" src="../js/echarts.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+		<title></title>
+	</head>
+
+	<body>
+		<div class="question-block">
+			<div class="title">bar图</div>
+			<div class="question-result">
+				<div id="barInfo" class="echar-pic"></div>
+			</div>
+			<hr />
+			<div class="question-desc">
+				<div><span class="desc-title">问题：</span>如果隐藏y轴，则y轴标签也消失</div> 
+				<div><span class="desc-title">期待：</span>隐藏y轴，y轴标签正常显示 </div>
+				<div><span class="desc-title">解决方案：</span></div>
+				<pre>
+					yAxis: {
+						axisLabel: {
+							show: true,
+							textStyle: {
+								color: "#000000"
+							}
+						},
+						axisLine: {
+							show: false,
+						},
+						axisTick: { //刻度
+							show: false,
+						}
+					}
+				</pre>
+			</div>
+			<hr />
+			<div class="question-desc">
+				<div><span class="desc-title">问题：</span>设置值在柱外时,最大值无法正常显示的问题</div> 
+				<div><span class="desc-title">期待：</span>所有标签均正常显示</div>
+				<div><span class="desc-title">解决方案：</span>
+					 在(x,y)是柱图左上角开始的位置，(x2,y2)是柱图右下角结束的位置，
+					 嵌套柱图的div大于柱图开始、结束位置， 即可正常显示
+				</div>
+				<pre>
+					grid: {
+						x: 80,
+						y: 10,
+						x2: 130,
+						y2: 10,
+						borderWidth: 0
+					}
+				</pre>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/bar/barQues.js"></script>
+	</body>
+
+</html>
